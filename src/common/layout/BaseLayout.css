@@ -4,7 +4,7 @@ footer {
 }
 
 .page-container {
-  min-height: calc(100vh - 75px) !important;
+  min-height: calc(100vh - 84px) !important;
   background: rgb(243, 119, 131);
   background: linear-gradient(
     180deg,

@@ -14,3 +14,25 @@
   padding: 30px;
   margin-top: 10%;
 }
+
+.landingBody {
+  display: flex;
+  min-height: calc(100vh - 200px) !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.landingText {
+  font-size: 56px;
+  color: white;
+}
+
+.button {
+  border-radius: 20px !important;
+  font-size: 25px;
+  padding: 25px;
+  background-color: #1db955 !important;
+  border: none !important;
+  line-height: 0px;
+}

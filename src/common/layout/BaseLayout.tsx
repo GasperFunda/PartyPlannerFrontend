@@ -37,7 +37,7 @@ export default function BaseLayout({ children }: IProps): ReactElement {
         <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
           <Footer className="footer blackBg">
             <p style={{ color: "white" }}>
-              Copyright © {new Date().getFullYear()} Party planner
+              Copyright © {new Date().getFullYear()} Party Planner
             </p>
           </Footer>
         </Col>
