@@ -1,10 +1,10 @@
 import { ReactElement } from "react";
+import Form from "./Form";
 
 export default function Login(): ReactElement {
   return (
-    <div>
-      {" "}
-      <p>this is login</p>
+    <div className="loginContainer">
+      <Form />
     </div>
   );
 }

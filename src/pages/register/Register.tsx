@@ -1,9 +1,10 @@
 import { ReactElement } from "react";
+import Form from "./Form";
 
 export default function Register(): ReactElement {
   return (
-    <div>
-      <p>this is register</p>
+    <div className="loginContainer">
+      <Form />
     </div>
   );
 }

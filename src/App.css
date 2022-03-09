@@ -31,8 +31,67 @@
 .button {
   border-radius: 20px !important;
   font-size: 15px;
-  padding: 10px 45px;
+  padding: 18px 45px;
+  font-weight: 700;
   background-color: #5cdb95 !important;
   border: none !important;
   line-height: 0px;
+}
+
+.signInBody {
+  background: rgba(255, 255, 255, 0.2);
+  width: 40%;
+  height: 40vh;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.registerContainer {
+  background: rgba(255, 255, 255, 0.2);
+  width: 40%;
+  height: 70vh;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.registerBody {
+  background: rgba(255, 255, 255, 0.2);
+  width: 60%;
+  height: 65vh;
+  border-radius: 30px;
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .signInBody {
+    width: 80%;
+  }
+  .registerBody {
+    width: 90%;
+  }
+}
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.input {
+  border-radius: 20px;
+}
+
+.formItem {
+  margin: 0;
 }
