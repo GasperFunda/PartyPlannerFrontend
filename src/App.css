@@ -30,9 +30,9 @@
 
 .button {
   border-radius: 20px !important;
-  font-size: 25px;
-  padding: 25px;
-  background-color: #1db955 !important;
+  font-size: 15px;
+  padding: 10px 45px;
+  background-color: #5cdb95 !important;
   border: none !important;
   line-height: 0px;
 }
