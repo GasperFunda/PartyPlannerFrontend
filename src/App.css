@@ -101,6 +101,63 @@
   align-items: center;
 }
 
+.circle1 {
+  position: absolute;
+  width: 575px;
+  height: 575px;
+  left: 117px;
+  top: 24px;
+
+  background: linear-gradient(
+    180deg,
+    #f7bf58 -44.58%,
+    rgba(243, 119, 131, 0) 151.31%
+  );
+  border-radius: 50%;
+}
+
+.circle2 {
+  position: absolute;
+  width: 368px;
+  height: 368px;
+  left: 508px;
+  top: 292px;
+
+  background: linear-gradient(
+    180deg,
+    #f7bf58 -44.58%,
+    rgba(243, 119, 131, 0) 151.31%
+  );
+  border-radius: 50%;
+}
+
+.circle3 {
+  position: absolute;
+  width: 409px;
+  height: 409px;
+  left: 1197px;
+  top: 507px;
+  border-radius: 50%;
+  background: linear-gradient(
+    180deg,
+    #f7bf58 -31.11%,
+    rgba(243, 119, 131, 0) 104.48%
+  );
+}
+
+.circle4 {
+  position: absolute;
+  width: 368px;
+  height: 368px;
+  left: 1022px;
+  top: 400px;
+  border-radius: 50%;
+  background: linear-gradient(
+    180deg,
+    #f7bf58 -31.11%,
+    rgba(243, 119, 131, 0) 104.48%
+  );
+}
 @media (max-width: 900px) {
   .signInBody {
     width: 80%;
