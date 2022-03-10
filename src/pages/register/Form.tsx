@@ -9,7 +9,7 @@ export default function Form(props: IFormProps) {
   return (
     <AntdForm className="form" name="register">
       <Item wrapperCol={{ offset: 11 }}>
-        <UserAddOutlined style={{ fontSize: "80px", margin: "0 auto" }} />
+        <UserAddOutlined style={{ fontSize: "80px", color: "white" }} />
       </Item>
       <Row gutter={8}>
         <Col span={12}>
@@ -112,7 +112,9 @@ export default function Form(props: IFormProps) {
         </Button>
       </Item>
       <Item wrapperCol={{ offset: 9 }}>
-        <a href="/login">Already have an account? Log in.</a>
+        <a href="/login">
+          <u>Already have an account? Log in.</u>
+        </a>
       </Item>
     </AntdForm>
   );
