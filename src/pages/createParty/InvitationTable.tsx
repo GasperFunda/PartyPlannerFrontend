@@ -1,0 +1,33 @@
+import { Table as AntdTable } from "antd";
+import { ColumnsType } from "antd/lib/table";
+import { InvitationsTableData } from "../../types/invitations";
+
+export interface IInvitationTableProps {
+  data: InvitationsTableData[];
+}
+
+export function InvitationTable({ data }: IInvitationTableProps) {
+  const columns: ColumnsType<InvitationsTableData> = [
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+      ellipsis: true,
+    },
+    {
+      title: "Email",
+      dataIndex: "email",
+      key: "email",
+      ellipsis: true,
+    },
+  ];
+  return (
+    <div hidden={!data.length}>
+      <AntdTable
+        columns={columns}
+        dataSource={data}
+        pagination={{ pageSize: 4 }}
+      ></AntdTable>
+    </div>
+  );
+}
