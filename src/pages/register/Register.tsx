@@ -4,7 +4,9 @@ import Form from "./Form";
 export default function Register(): ReactElement {
   return (
     <div className="loginContainer">
-      <Form />
+      <div className="registerBody">
+        <Form />
+      </div>
     </div>
   );
 }
