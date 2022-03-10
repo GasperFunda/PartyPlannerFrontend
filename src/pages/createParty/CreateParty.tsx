@@ -16,7 +16,9 @@ export default function CreateParty(props: ICreatePartyProps) {
 
   const handleNextStep = useCallback(
     (newData: any) => {
-      setData({ ...data, newData });
+      console.log(data);
+      console.log(newData);
+      setData({ ...data, ...newData });
       setStep(step + 1);
     },
     [step, data]
@@ -24,7 +26,6 @@ export default function CreateParty(props: ICreatePartyProps) {
 
   const handlePrevStep = useCallback(
     (data: any) => {
-      setData(data);
       setStep(step - 1);
     },
     [step]
@@ -34,14 +35,14 @@ export default function CreateParty(props: ICreatePartyProps) {
     console.log(photo);
   }, []);
 
-  const handleSubmit = useCallback((invitations: any) => {
-    console.log(invitations);
-
-    const finishedData = { ...data, invitations };
-    console.log(finishedData);
-    message.success("Your invitations have been sent out!");
-    // TODO: Call backend and go to home/party details page
-  }, []);
+  const handleSubmit = useCallback(
+    (invitations: any) => {
+      const finishedData = { ...data, ...invitations };
+      message.success("Your invitations have been sent out!");
+      // TODO: Call backend and go to home/party details page
+    },
+    [data]
+  );
   return (
     <div className="createPartyContainer">
       <h2>Step {step} of 6</h2>
