@@ -1,3 +1,4 @@
+import { LoginOutlined } from "@ant-design/icons";
 import Icon from "@ant-design/icons/lib/components/Icon";
 import { Button, Form as AntdForm, Input } from "antd";
 
@@ -8,7 +9,9 @@ export interface IFormProps {}
 export default function Form(props: IFormProps) {
   return (
     <AntdForm name="login" className="form">
-      <Icon type="login" />
+      <Item wrapperCol={{ offset: 8 }}>
+        <LoginOutlined style={{ fontSize: "60px" }} />
+      </Item>
       <Item
         label="Email"
         name="email"

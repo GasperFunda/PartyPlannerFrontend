@@ -1,4 +1,4 @@
-import Icon from "@ant-design/icons/lib/components/Icon";
+import { UserAddOutlined } from "@ant-design/icons";
 import { Button, Col, Form as AntdForm, Input, Row } from "antd";
 
 const { Item } = AntdForm;
@@ -8,7 +8,9 @@ export interface IFormProps {}
 export default function Form(props: IFormProps) {
   return (
     <AntdForm className="form" name="register">
-      <Icon type="login" />
+      <Item wrapperCol={{ offset: 11 }}>
+        <UserAddOutlined style={{ fontSize: "80px", margin: "0 auto" }} />
+      </Item>
       <Row gutter={8}>
         <Col span={12}>
           <Item
