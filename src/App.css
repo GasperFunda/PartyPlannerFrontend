@@ -36,6 +36,7 @@
   background-color: #5cdb95 !important;
   border: none !important;
   line-height: 0px;
+  text-align: center;
 }
 
 .signInBody {
@@ -45,31 +46,24 @@
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-.registerContainer {
-  background: rgba(255, 255, 255, 0.2);
-  width: 40%;
-  height: 70vh;
-  border-radius: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.form > * {
+  margin: 0 auto;
 }
 
 .registerBody {
   background: rgba(255, 255, 255, 0.2);
   width: 60%;
+  padding: 50px;
   height: 65vh;
   border-radius: 30px;
   margin-top: 45px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 @media (max-width: 900px) {
@@ -90,8 +84,5 @@
 
 .input {
   border-radius: 20px;
-}
-
-.formItem {
-  margin: 0;
+  width: 100%;
 }

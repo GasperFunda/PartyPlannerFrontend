@@ -7,7 +7,7 @@ export interface IFormProps {}
 
 export default function Form(props: IFormProps) {
   return (
-    <AntdForm className="registerBody" name="register">
+    <AntdForm className="form" name="register">
       <Icon type="login" />
       <Row gutter={8}>
         <Col span={12}>
@@ -104,12 +104,12 @@ export default function Form(props: IFormProps) {
       >
         <Input.Password className="input" />
       </Item>
-      <Item>
+      <Item wrapperCol={{ offset: 10 }}>
         <Button type="primary" htmlType="submit" className="button">
           REGISTER
         </Button>
       </Item>
-      <Item>
+      <Item wrapperCol={{ offset: 9 }}>
         <a href="/login">Already have an account? Log in.</a>
       </Item>
     </AntdForm>
