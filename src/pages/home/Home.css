@@ -1,6 +1,6 @@
 .homeBody {
   margin: auto;
-  max-width: 1000px;
+  max-width: 1200px;
   margin-top: 100px;
 }
 
@@ -19,6 +19,7 @@
   height: 300px;
   font-size: 14px;
   line-height: 120px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   background: linear-gradient(#F47884, #FAD6A9);
   border-radius: 20px;
   margin-bottom: 75px;
