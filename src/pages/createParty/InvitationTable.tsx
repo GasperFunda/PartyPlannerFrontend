@@ -26,6 +26,7 @@ export function InvitationTable({ data }: IInvitationTableProps) {
       <AntdTable
         columns={columns}
         dataSource={data}
+        bordered={false}
         pagination={{ pageSize: 4 }}
       ></AntdTable>
     </div>

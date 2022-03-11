@@ -1,10 +1,10 @@
 import { Form as AntdForm, Button, Input } from "antd";
+import { useForm } from "antd/lib/form/Form";
 import { useCallback, useState } from "react";
 import { InvitationsTableData } from "../../../types/invitations";
 import { InvitationTable } from "../InvitationTable";
 
 const { Item } = AntdForm;
-
 export interface IPartyInviteFormProps {
   data: any;
   onSuccess: (data: any) => void;
@@ -17,11 +17,14 @@ export default function PartyInviteForm({
   onBack,
 }: IPartyInviteFormProps) {
   const [invitations, setInvitations] = useState([] as InvitationsTableData[]);
+  const [form] = useForm();
+
   const addInvite = useCallback(
     (data: InvitationsTableData) => {
       setInvitations([...invitations, data]);
+      form.resetFields();
     },
-    [invitations]
+    [invitations, form]
   );
   return (
     <>
@@ -36,11 +39,30 @@ export default function PartyInviteForm({
           layout="inline"
           style={{ marginBottom: "35px" }}
           onFinish={addInvite}
+          form={form}
         >
-          <Item name="name" label="Name">
+          <Item
+            name="name"
+            label="Name"
+            rules={[
+              {
+                required: true,
+                message: "Please enter the name of the guest.",
+              },
+            ]}
+          >
             <Input className="input" />
           </Item>
-          <Item name="email" label="Email">
+          <Item
+            name="email"
+            label="Email"
+            rules={[
+              {
+                required: true,
+                message: "Please enter the email of the guest.",
+              },
+            ]}
+          >
             <Input className="input" />
           </Item>
           <Item>

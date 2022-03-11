@@ -16,8 +16,6 @@ export default function CreateParty(props: ICreatePartyProps) {
 
   const handleNextStep = useCallback(
     (newData: any) => {
-      console.log(data);
-      console.log(newData);
       setData({ ...data, ...newData });
       setStep(step + 1);
     },
@@ -38,6 +36,8 @@ export default function CreateParty(props: ICreatePartyProps) {
   const handleSubmit = useCallback(
     (invitations: any) => {
       const finishedData = { ...data, ...invitations };
+      console.log(finishedData);
+
       message.success("Your invitations have been sent out!");
       // TODO: Call backend and go to home/party details page
     },

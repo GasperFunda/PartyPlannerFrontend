@@ -1,5 +1,5 @@
 import { CalendarFilled } from "@ant-design/icons";
-import { Form as AntdForm, Button, Input } from "antd";
+import { Form as AntdForm, Button, TimePicker, DatePicker } from "antd";
 
 const { Item } = AntdForm;
 
@@ -27,28 +27,48 @@ export function PartyTimeForm({
             When should we come?
           </h1>
         </div>
-
-        <Item
-          label={
-            <p style={{ fontSize: "23px", marginTop: "60px" }}>
-              This party will start at
-            </p>
-          }
-          rules={[
-            {
-              required: true,
-              message: "Please enter the party name.",
-            },
-          ]}
-          name="date"
-          colon={false}
+        <div
+          style={{ display: "flex", flexDirection: "row", marginTop: "20px" }}
         >
-          <Input
-            placeholder={`${new Date()}`}
-            bordered={false}
-            style={{ borderBottom: "2px solid #8ee4af", fontSize: "23px" }}
-          />
-        </Item>
+          <Item
+            label={
+              <p style={{ fontSize: "23px", marginTop: "30px" }}>
+                This party will start at
+              </p>
+            }
+            rules={[
+              {
+                required: true,
+                message: "Please enter the party date.",
+              },
+            ]}
+            name="date"
+            colon={false}
+          >
+            <DatePicker
+              placeholder={`${new Date()}`}
+              bordered={false}
+              style={{ borderBottom: "2px solid #8ee4af", fontSize: "23px" }}
+            />
+          </Item>
+
+          <Item
+            rules={[
+              {
+                required: true,
+                message: "Please enter the party time.",
+              },
+            ]}
+            name="time"
+            colon={false}
+          >
+            <TimePicker
+              placeholder={`20:00:00`}
+              bordered={false}
+              style={{ borderBottom: "2px solid #8ee4af", fontSize: "23px" }}
+            />
+          </Item>
+        </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Item>
             <Button
