@@ -1,0 +1,81 @@
+.homeBody {
+  margin: auto;
+  max-width: 1000px;
+  margin-top: 100px;
+}
+
+.homeBody * {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+.homeBody .ant-col {
+  background: transparent;
+  border: 0;
+}
+
+.partyCard {
+  height: 300px;
+  font-size: 14px;
+  line-height: 120px;
+  background: linear-gradient(#F47884, #FAD6A9);
+  border-radius: 20px;
+  margin-bottom: 75px;
+}
+
+.partyCardImage {
+  min-height: 50%;
+  height: 50%;
+  overflow: hidden;
+}
+
+.partyCardImage>img {
+  min-width: 100%;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+.partyCardDate {
+  height: 90px;
+  width: 90px;
+  border-radius: 20px;
+  position: absolute;
+  right: 10px;
+  top: 20%;
+  background-color: #F47884;
+  text-align: center;
+}
+
+.partyCardDate .dateText {
+  color: white;
+  font-size: 20px;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: top;
+  padding-top: 20%;
+  font-weight: 700;
+}
+
+.partyCardDate .dateText > span {
+  font-family: inherit;
+  font-weight: 200;
+  font-size: 25px;
+  line-height: 1.5;
+}
+
+.partyCardTitleText {
+  color: white;
+  padding-top: 20px;
+  padding-left: 10px;
+  line-height: 2;
+}
+
+.partyCardTitle {
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.partyCardText {
+  line-height: 1.5;
+}
