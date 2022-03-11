@@ -1,5 +1,5 @@
 import { CalendarFilled } from "@ant-design/icons";
-import { Form as AntdForm, Button, Input } from "antd";
+import { Form as AntdForm, Button, Input, Checkbox } from "antd";
 import TextArea from "antd/lib/input/TextArea";
 
 const { Item } = AntdForm;
@@ -34,6 +34,18 @@ export function PartyNotesForm({
           colon={false}
         >
           <TextArea minLength={15} />
+        </Item>
+        <Item
+          label={
+            <p style={{ fontSize: "23px", marginTop: "60px" }}>
+              Is this party private?
+            </p>
+          }
+          name="private"
+          colon={false}
+          valuePropName="checked"
+        >
+          <Checkbox />
         </Item>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Item>
