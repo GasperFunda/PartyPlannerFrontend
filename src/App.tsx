@@ -4,6 +4,7 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import BaseLayout from "./common/layout/BaseLayout";
 import Landing from "./pages/landing/Landing";
+import PartyDetails from "./pages/partyDetails/PartyDetails";
 import Home from "./pages/home/Home";
 import CreateParty from "./pages/createParty/CreateParty";
 import Profile from "./pages/profile/Profile";
@@ -25,6 +26,14 @@ function App() {
           element={
             <BaseLayout>
               <Register />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path="/party-details"
+          element={
+            <BaseLayout>
+              <PartyDetails />
             </BaseLayout>
           }
         />

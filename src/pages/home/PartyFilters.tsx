@@ -3,7 +3,6 @@ import Text from "antd/lib/typography/Text";
 import querystring from 'querystring'
 
 export default function PartyFilters() {
-
     var parameters : string[] = [];
     var publicParties = false, myParties = false, myInvitations = false;
 
