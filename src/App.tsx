@@ -30,7 +30,7 @@ function App() {
           }
         />
         <Route
-          path="/party-details"
+          path="/party-details/:id"
           element={
             <BaseLayout>
               <PartyDetails />

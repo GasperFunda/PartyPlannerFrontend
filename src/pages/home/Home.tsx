@@ -18,7 +18,7 @@ export default function Home() {
         lg={{ span: 7 }}
       >
         <Card
-          id="#"
+          id="Test"
           name="LIGHT show!"
           date={new Date()}
           location="Tyrševa ulica 30, 3000 Maribor"
@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <div className="homeBody">
-      <PartyFilters></PartyFilters>
+      <PartyFilters/>
       <Row justify="space-around">{cols}</Row>
       <Button
         type="primary"

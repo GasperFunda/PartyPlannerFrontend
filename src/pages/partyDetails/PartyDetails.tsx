@@ -9,7 +9,7 @@ import Invitees from "./components/Invitees";
 import ShoppingList from "./components/ShoppingList";
 import { User } from "../../types/user";
 import "./PartyDetails.css";
-import { stat } from "fs";
+import { useParams } from "react-router-dom";
 
 const { TabPane } = Tabs;
 
@@ -45,7 +45,9 @@ function cantGoPressed(){
 }
 
 export default function PartyDetails(this: any) {
-  var isPartyHost = false;
+  const { id } = useParams()
+
+  var isUserHost = true;
   // 0: not selected yet, 1: going, 2: maybe, 3: cantGo
   var attendanceStatus = 0;
   var invitees = [];
@@ -81,7 +83,7 @@ export default function PartyDetails(this: any) {
             <Card className="attendanceCard attendanceCardMaybe" title={<span className="attendanceCardTitle">MAYBE</span>}>0</Card>
             <Card className="attendanceCard attendanceCardCantGo" title={<span className="attendanceCardTitle">CAN'T GO</span>}>0</Card>
           </Space>
-          {(!isPartyHost) ?
+          {(!isUserHost) ?
             <Space>
             <Button
               type="primary"
@@ -118,9 +120,9 @@ export default function PartyDetails(this: any) {
             <Comments />
           </TabPane>
           <TabPane tab="Invited" key="3">
-            <Invitees invitees={invitees}/>
+            <Invitees invitees={invitees} isUserHost={isUserHost}/>
           </TabPane>
-          {(isPartyHost) ? 
+          {(isUserHost) ? 
             <TabPane tab="Shopping list" key="4">
               <ShoppingList />
             </TabPane>
