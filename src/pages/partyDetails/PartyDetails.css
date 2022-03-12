@@ -1,3 +1,7 @@
+.icon {
+    height: 30px;
+}
+
 .userName, .wishlistItemDescription, .inviteeStatus {
     font-weight: bold;
 }

@@ -74,7 +74,7 @@
 .partyDetailsImportantInfo {
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: flex-start;
 }
 
 .partyDetailsAttendanceInfo {
@@ -107,7 +107,7 @@
 }
 
 .partyDetailsInfoText {
-  font-size: 21px;
+  font-size: 15px;
 }
 
 .partyDetailsInfoFromUsers {

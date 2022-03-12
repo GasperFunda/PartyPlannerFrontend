@@ -1,8 +1,7 @@
 import { Button, Space, Card, Tabs } from "antd";
 import Text from "antd/lib/typography/Text";
-import testImage from "./testImage.jpg";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faCalendarDays, faNoteSticky } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faLocationDot, faCalendarDays, faNoteSticky } from '@fortawesome/free-solid-svg-icons';
 import Wishlist from './components/Wishlist';
 import Comments from "./components/Comments";
 import Invitees from "./components/Invitees";
@@ -70,22 +69,25 @@ export default function PartyDetails(this: any) {
 
   return (
     <div className="partyDetailsBody">
-      <img src={testImage} className="partyDetailsImage" />
+      <img src="../partypicsample.png" className="partyDetailsImage" />
       <Card className="partyDetailsInfoContainer" title={<span className="partyDetailsPartyTitle">Party numero UNO</span>}>
-        <div className="partyDetailsImportantInfo">
+        <Space className="partyDetailsImportantInfo" size="middle">
           <Space>
-            <FontAwesomeIcon icon={faLocationDot} fontSize="25px" />
+            {/* <FontAwesomeIcon icon={faLocationDot} fontSize="25px" /> */}
+            <img className="icon" src="../locationpicsample.png" />
             <Text className="partyDetailsInfoText">Location</Text>
           </Space>
           <Space>
-            <FontAwesomeIcon icon={faCalendarDays} fontSize="21px" />
+            {/* <FontAwesomeIcon icon={faCalendarDays} fontSize="21px" /> */}
+            <img className="icon" src="../datepicsample.png" />
             <Text className="partyDetailsInfoText">Date</Text>
           </Space>
           <Space>
-            <FontAwesomeIcon icon={faNoteSticky} fontSize="21px" />
+            {/* <FontAwesomeIcon icon={faNoteSticky} fontSize="21px" /> */}
+            <img className="icon" src="../notespicsample.png" />
             <Text className="partyDetailsInfoText">Notes</Text>
           </Space>
-        </div>
+        </Space>
         <div className="partyDetailsAttendanceInfo">
           <Space>
             <Card className="attendanceCard attendanceCardGoing" title={<span className="attendanceCardTitle">GOING</span>}>0</Card>
