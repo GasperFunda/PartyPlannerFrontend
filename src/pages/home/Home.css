@@ -20,7 +20,7 @@
   font-size: 14px;
   line-height: 120px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  background: linear-gradient(#F47884, #FAD6A9);
+  background: linear-gradient(#f47884, #fad6a9);
   border-radius: 20px;
   margin-bottom: 75px;
 }
@@ -31,7 +31,7 @@
   overflow: hidden;
 }
 
-.partyCardImage>img {
+.partyCardImage > img {
   min-width: 100%;
   width: 100%;
   border-radius: 20px 20px 0 0;
@@ -44,7 +44,7 @@
   position: absolute;
   right: 10px;
   top: 20%;
-  background-color: #F47884;
+  background-color: #f47884;
   text-align: center;
 }
 
@@ -79,4 +79,15 @@
 
 .partyCardText {
   line-height: 1.5;
+}
+
+.createPartyButton {
+  width: 100px;
+  height: 100px;
+  background-color: #5cdb95;
+  border: none;
+  position: fixed;
+  z-index: 100;
+  right: 50;
+  bottom: 50;
 }
