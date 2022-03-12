@@ -52,7 +52,7 @@ export default function PartyDetails(this: any) {
 
   var status = 0;
   for (let i = 0; i < 10; i++) {
-    invitees.push(new User(i, "Jože", "Test" + i, "joze.test@gmail.com", status));
+    invitees.push(new User(i, "Jože", "Test" + i, "joze.test@gmail.com", status, "profilepicsample.png"));
     status++;
     if(status === 4) status = 0;
   }

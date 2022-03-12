@@ -31,7 +31,7 @@
   overflow: hidden;
 }
 
-.partyCardImage > img {
+.partyCardImage>img {
   min-width: 100%;
   width: 100%;
   border-radius: 20px 20px 0 0;
@@ -58,7 +58,7 @@
   font-weight: 700;
 }
 
-.partyCardDate .dateText > span {
+.partyCardDate .dateText>span {
   font-family: inherit;
   font-weight: 200;
   font-size: 25px;
@@ -90,4 +90,37 @@
   z-index: 100;
   right: 50;
   bottom: 50;
+}
+
+.filtersContainer {
+  margin-bottom: 4vh;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.filterTitle {
+  color: white;
+  font-weight: bold;
+}
+
+.ant-switch-checked {
+  background-color: #5cdb95;
+  border-color: transparent;
+}
+
+.buttonConfirm {
+  border-radius: 20px;
+  background-color: transparent;
+  font-weight: bold;
+  color: white;
+  border-color: white;
+}
+
+.buttonConfirm:hover, .buttonConfirm:focus {
+  border-radius: 20px;
+  background-color: #5cdb95;
+  font-weight: bold;
+  color: white;
+  border-color: #5cdb95;
 }

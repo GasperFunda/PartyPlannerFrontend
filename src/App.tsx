@@ -7,6 +7,7 @@ import Landing from "./pages/landing/Landing";
 import PartyDetails from "./pages/partyDetails/PartyDetails";
 import Home from "./pages/home/Home";
 import CreateParty from "./pages/createParty/CreateParty";
+import Profile from "./pages/profile/Profile";
 
 function App() {
   return (
@@ -45,18 +46,26 @@ function App() {
           }
         />
         <Route
-          path="/"
-          element={
-            <BaseLayout>
-              <Landing />
-            </BaseLayout>
-          }
-        />
-        <Route
           path="/home"
           element={
             <BaseLayout>
               <Home />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <BaseLayout>
+              <Profile />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path="/"
+          element={
+            <BaseLayout>
+              <Landing />
             </BaseLayout>
           }
         />

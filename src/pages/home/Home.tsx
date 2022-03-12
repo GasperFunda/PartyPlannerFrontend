@@ -1,6 +1,7 @@
 import { PlusOutlined } from "@ant-design/icons";
 import { Row, Col, Button } from "antd";
 import Card from "./Card";
+import PartyFilters from "./PartyFilters";
 import "./Home.css";
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
 
   return (
     <div className="homeBody">
+      <PartyFilters></PartyFilters>
       <Row justify="space-around">{cols}</Row>
       <Button
         type="primary"
