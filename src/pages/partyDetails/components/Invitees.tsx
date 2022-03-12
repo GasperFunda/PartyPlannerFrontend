@@ -30,7 +30,7 @@ export default function Invitees(props: IFormProps) {
                             <img className="picture" src={"../" + invitee.picture} />
                             <div className="inviteeInnerContainer">
                                 <span className="userName">{invitee.name + " " + invitee.surname}</span>
-                                <span className={"inviteeStatus" + attendanceClasses[invitee.attendanceStatus]}>{attendanceTexts[invitee.attendanceStatus]}</span>
+                                <span className={"inviteeStatus " + attendanceClasses[invitee.attendanceStatus]}>{attendanceTexts[invitee.attendanceStatus]}</span>
                             </div>
                         </div>
                     )

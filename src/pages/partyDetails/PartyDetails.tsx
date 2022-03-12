@@ -75,17 +75,17 @@ export default function PartyDetails(this: any) {
           <Space>
             {/* <FontAwesomeIcon icon={faLocationDot} fontSize="25px" /> */}
             <img className="icon" src="../locationpicsample.png" />
-            <Text className="partyDetailsInfoText">Location</Text>
+            <Text className="partyDetailsInfoText">Tyrševa ulica 30</Text>
           </Space>
           <Space>
             {/* <FontAwesomeIcon icon={faCalendarDays} fontSize="21px" /> */}
             <img className="icon" src="../datepicsample.png" />
-            <Text className="partyDetailsInfoText">Date</Text>
+            <Text className="partyDetailsInfoText">31.1.2022</Text>
           </Space>
           <Space>
             {/* <FontAwesomeIcon icon={faNoteSticky} fontSize="21px" /> */}
             <img className="icon" src="../notespicsample.png" />
-            <Text className="partyDetailsInfoText">Notes</Text>
+            <Text className="partyDetailsInfoText">Fešta u trojki nje</Text>
           </Space>
         </Space>
         <div className="partyDetailsAttendanceInfo">
