@@ -65,7 +65,7 @@ export default function PartyDetails(this: any) {
 
   var wishlistItems = [];
   for (let i = 0; i < 10; i++) {
-    wishlistItems.push(new WishlistItem(i, "VODKA", "icon-name"));
+    wishlistItems.push(new WishlistItem(i, "VODKA", "icon-name", i+1));
   }
 
   return (
@@ -133,7 +133,7 @@ export default function PartyDetails(this: any) {
           </TabPane>
           {(isUserHost) ? 
             <TabPane tab="Shopping list" key="4">
-              <ShoppingList />
+              <ShoppingList wishlistItems={wishlistItems}/>
             </TabPane>
           : <></>}
         </Tabs>

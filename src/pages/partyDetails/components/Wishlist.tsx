@@ -1,14 +1,28 @@
 import { Button } from "antd";
 import { WishlistItem } from "../../../types/wishlistItem";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faCalendarDays, faNoteSticky } from '@fortawesome/free-solid-svg-icons';
+import { faMartiniGlassCitrus } from '@fortawesome/free-solid-svg-icons';
 
 export interface IFormProps {
     wishlistItems: WishlistItem[]
 }
 
-export default function Wishlist(props: IFormProps) {
+function meToo(e: any){
+    var button = e.target.closest("button");
+    // TODO connect with backend
+    var id = button.id;
 
+    if(button.classList.contains("redBackground")){
+        button.classList.remove("redBackground");
+        button.textContent = "ME TOO";
+    }
+    else {
+        button.classList.add("redBackground");
+        button.textContent = "NOT ME";
+    }
+}
+
+export default function Wishlist(props: IFormProps) {
     return (
         <>
             <Button
@@ -21,12 +35,14 @@ export default function Wishlist(props: IFormProps) {
             <div className="listContainer">
                 {props.wishlistItems.map((wishlistItem) => {
                     return (
-                        <div className="listItem" key={wishlistItem.id}>
-                            <FontAwesomeIcon icon={faLocationDot} fontSize="35px" />
-                            <span>{wishlistItem.description}</span>
+                        <div className="listItem wishlistItem" key={wishlistItem.id}>
+                            <FontAwesomeIcon icon={faMartiniGlassCitrus} fontSize="30px" />
+                            <span className="wishlistDescription">{wishlistItem.description}</span>
                             <Button 
-                                type="primary" 
+                                type="primary"
                                 className="buttonSmall rightAndCenter"
+                                onClick={meToo}
+                                id={wishlistItem.id.toString()}
                             >
                                 ME TOO
                             </Button>

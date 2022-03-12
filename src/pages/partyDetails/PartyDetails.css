@@ -1,5 +1,5 @@
 .listContainer {
-    background: rgba(196, 196, 196, 0.14);
+    background: rgba(196, 196, 196, 0.2);
     border-radius: 35px;
     padding: 15px;
 }
@@ -103,4 +103,20 @@
     border-right-color: #AFAFAF !important;
     border-bottom-color: #FFFFFF !important;
     border-left: #FFFFFF !important;
+}
+
+.wishlistItem {
+    padding: 10px;
+    line-height: 1;
+}
+
+.wishlistDescription {
+    position: absolute;
+    left: 60px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.redBackground {
+  background-color: #F37783 !important;
 }
