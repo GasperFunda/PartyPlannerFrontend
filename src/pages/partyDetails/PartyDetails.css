@@ -125,6 +125,10 @@
     background-color: #47b97a;
 }
 
+.buttonWishlistAgreement:focus {
+    background-color: #5cdb95;
+}
+
 .redBackground {
     background-color: #F37783 !important;
 }
