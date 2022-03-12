@@ -7,12 +7,12 @@ export interface IFormProps {
     wishlistItems: WishlistItem[]
 }
 
-function meToo(e: any){
+function meToo(e: any) {
     var button = e.target.closest("button");
     // TODO connect with backend
     var id = button.id;
 
-    if(button.classList.contains("redBackground")){
+    if (button.classList.contains("redBackground")) {
         button.classList.remove("redBackground");
         button.textContent = "ME TOO";
     }
@@ -32,20 +32,22 @@ export default function Wishlist(props: IFormProps) {
             >
                 ADD TO WISH LIST
             </Button>
-            <div className="listContainer">
+            <div className="tabContent">
                 {props.wishlistItems.map((wishlistItem) => {
                     return (
-                        <div className="listItem wishlistItem" key={wishlistItem.id}>
-                            <FontAwesomeIcon icon={faMartiniGlassCitrus} fontSize="30px" />
-                            <span className="wishlistDescription">{wishlistItem.description}</span>
-                            <Button 
-                                type="primary"
-                                className="buttonSmall rightAndCenter"
-                                onClick={meToo}
-                                id={wishlistItem.id.toString()}
-                            >
-                                ME TOO
-                            </Button>
+                        <div className="wishlistListItem" key={wishlistItem.id}>
+                            <div>
+                                <img className="picture" src={"../" + wishlistItem.icon} />
+                                <span className="wishlistItemDescription">{wishlistItem.description}</span>
+                                <Button
+                                    type="primary"
+                                    className="buttonWishlistAgreement"
+                                    onClick={meToo}
+                                    id={wishlistItem.id.toString()}
+                                >
+                                    ME TOO
+                                </Button>
+                            </div>
                         </div>
                     )
                 })}

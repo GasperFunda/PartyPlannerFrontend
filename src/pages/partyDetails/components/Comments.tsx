@@ -19,7 +19,7 @@ export default function Comments(props: IFormProps) {
         {props.comments.map((comment) => {
           return (
             <div className="listItem" key={comment.id}>
-              <img className="userPicture" src={"../" + comment.user.picture} />
+              <img className="picture" src={"../" + comment.user.picture} />
               <div className="commentInnerContainer">
                 <span className="userName">{comment.user.name + " " + comment.user.surname}</span>
                 <span className="comment">{comment.comment}</span>

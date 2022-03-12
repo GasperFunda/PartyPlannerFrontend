@@ -1,10 +1,4 @@
-.listContainer {
-    background: rgba(196, 196, 196, 0.2);
-    border-radius: 35px;
-    padding: 15px;
-}
-
-.userName {
+.userName, .wishlistItemDescription, .inviteeStatus {
     font-weight: bold;
 }
 
@@ -12,11 +6,7 @@
     padding: 25px;
 }
 
-.commentContainer:first-child {
-    margin-top: 0px;
-}
-
-.commentInnerContainer {
+.commentInnerContainer, .inviteeInnerContainer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -39,17 +29,7 @@
     box-shadow: rgba(0, 0, 0, 0.23) 0px 3px 7px;
 }
 
-.inviteeStatus {
-    font-weight: bold;
-}
-
-.inviteeInnerContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.userPicture {
+.picture {
     height: 40px;
     padding-right: 15px;
 }
@@ -83,6 +63,7 @@
     border-bottom-color: #FFFFFF !important;
     border-left: #FFFFFF !important;
 }
+
 .attendanceContainerMaybe {
     border-width: 1px 7px 1px 1px !important;
     border-top-color: #FFFFFF !important;
@@ -90,6 +71,7 @@
     border-bottom-color: #FFFFFF !important;
     border-left: #FFFFFF !important;
 }
+
 .attendanceContainerGoing {
     border-width: 1px 7px 1px 1px !important;
     border-top-color: #FFFFFF !important;
@@ -97,17 +79,13 @@
     border-bottom-color: #FFFFFF !important;
     border-left: #FFFFFF !important;
 }
+
 .attendanceContainerNotSelected {
     border-width: 1px 7px 1px 1px !important;
     border-top-color: #FFFFFF !important;
     border-right-color: #AFAFAF !important;
     border-bottom-color: #FFFFFF !important;
     border-left: #FFFFFF !important;
-}
-
-.wishlistItem {
-    padding: 10px;
-    line-height: 1;
 }
 
 .wishlistDescription {
@@ -117,6 +95,32 @@
     transform: translate(0, -50%);
 }
 
+.wishlistListItem {
+    padding: 7px;
+    margin-top: 25px;
+    border-radius: 20px;
+    border: 1px solid #f4f4f4;
+    box-shadow: rgba(0, 0, 0, 0.23) 0px 3px 7px;
+}
+
+.wishlistListItem:first-child {
+    margin-top: 0px;
+}
+
+.buttonWishlistAgreement {
+    margin-top: -7px;
+    margin-right: -8px;
+    border-radius: 0px 20px 20px 0px;
+    float: right;
+    height: 55px;
+    background-color: #5cdb95;
+    border: none;
+}
+
+.buttonWishlistAgreement:hover {
+    background-color: #47b97a;
+}
+
 .redBackground {
-  background-color: #F37783 !important;
+    background-color: #F37783 !important;
 }

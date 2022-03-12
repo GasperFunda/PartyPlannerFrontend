@@ -27,7 +27,7 @@ export default function Invitees(props: IFormProps) {
                 {props.invitees.map((invitee) => {
                     return (
                         <div className={"listItem " + attendanceContainerClasses[invitee.attendanceStatus]} key={invitee.id}>
-                            <img className="userPicture" src={"../" + invitee.picture} />
+                            <img className="picture" src={"../" + invitee.picture} />
                             <div className="inviteeInnerContainer">
                                 <span className="userName">{invitee.name + " " + invitee.surname}</span>
                                 <span className={"inviteeStatus rightAndCenter " + attendanceClasses[invitee.attendanceStatus]}>{attendanceTexts[invitee.attendanceStatus]}</span>
