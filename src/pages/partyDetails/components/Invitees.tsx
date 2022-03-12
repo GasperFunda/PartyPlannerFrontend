@@ -21,11 +21,11 @@ export default function Invitees(props: IFormProps) {
                     INVITE MORE
                 </Button>
             : <></>}
-            <div className="inviteesTab">
+            <div className="listContainer">
                 {props.invitees.map((invitee) => {
                     return (
-                        <div className="invitee" key={invitee.id}>
-                            <img className="inviteePicture" src={"../" + invitee.picture}/>
+                        <div className="listItem" key={invitee.id}>
+                            <img className="userPicture" src={"../" + invitee.picture}/>
                             {invitee.name + " " + invitee.surname}
                             <span className={"inviteeStatus rightAndCenter " + attendanceClasses[invitee.attendanceStatus]}>{attendanceTexts[invitee.attendanceStatus]}</span>
                         </div>

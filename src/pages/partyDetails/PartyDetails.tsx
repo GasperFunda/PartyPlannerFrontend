@@ -122,14 +122,14 @@ export default function PartyDetails(this: any) {
           : <></>}
         </div>
         <Tabs className="partyDetailsInfoFromUsers" defaultActiveKey="1">
-          <TabPane tab="Wishlist" key="1">
-            <Wishlist wishlistItems={wishlistItems}/>
-          </TabPane>
           <TabPane tab="Comments" key="2">
             <Comments comments={comments}/>
           </TabPane>
-          <TabPane tab="Invited" key="3">
+          <TabPane tab="Invitees" key="3">
             <Invitees invitees={invitees} isUserHost={isUserHost}/>
+          </TabPane>
+          <TabPane tab="Wishlist" key="1">
+            <Wishlist wishlistItems={wishlistItems}/>
           </TabPane>
           {(isUserHost) ? 
             <TabPane tab="Shopping list" key="4">
