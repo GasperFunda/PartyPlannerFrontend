@@ -6,14 +6,24 @@ export default function Landing() {
   return (
     <Space className="landingBody">
       <Text className="landingText">LET'S PARTY. Without stress.</Text>
-      <Button
-        type="primary"
-        className="button"
-        size="large"
-        onClick={() => (window.location.href = "/login")}
-      >
-        JOIN NOW
-      </Button>
+      <div style={{ display: "flex", flexDirection: "row", columnGap: "30px" }}>
+        <Button
+          type="primary"
+          className="button"
+          size="large"
+          onClick={() => (window.location.href = "/login")}
+        >
+          JOIN NOW
+        </Button>
+        <Button
+          type="primary"
+          className="button"
+          size="large"
+          onClick={() => (window.location.href = "/home")}
+        >
+          BROWSE PARTIES
+        </Button>
+      </div>
     </Space>
   );
 }

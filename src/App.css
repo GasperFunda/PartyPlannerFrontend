@@ -170,8 +170,29 @@
   border-color: #d8506d;
 }
 
+.ant-checkbox-inner::after {
+  width: 13.714286px;
+  height: 23.142857px;
+}
+
+.ant-checkbox .ant-checkbox-inner {
+  margin-top: 10px;
+  width: 35px;
+  height: 35px;
+}
+
+.buttonDanger {
+  border-radius: 20px !important;
+  font-size: 15px;
+  padding: 18px 45px;
+  font-weight: 700;
+  border: none !important;
+  line-height: 0px;
+  text-align: center;
+}
+
 .signInBody {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.34);
   width: 40%;
   height: 40vh;
   border-radius: 30px;
@@ -186,7 +207,7 @@
 }
 
 .registerBody {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.34);
   width: 60%;
   padding: 50px;
   height: 65vh;
@@ -195,16 +216,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-@media (max-width: 900px) {
-  .signInBody {
-    width: 80%;
-  }
-
-  .registerBody {
-    width: 90%;
-  }
 }
 
 .loginContainer {
@@ -217,4 +228,86 @@
 .input {
   border-radius: 20px;
   width: 100%;
+}
+
+.createPartyContainer {
+  background: white;
+  width: 60%;
+  padding: 50px;
+  height: 65vh;
+  border-radius: 30px;
+  margin: 45px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle1 {
+  position: absolute;
+  width: 575px;
+  height: 575px;
+  left: 117px;
+  top: 24px;
+
+  background: linear-gradient(
+    180deg,
+    #f7bf58 -44.58%,
+    rgba(243, 119, 131, 0) 151.31%
+  );
+  border-radius: 50%;
+}
+
+.circle2 {
+  position: absolute;
+  width: 368px;
+  height: 368px;
+  left: 508px;
+  top: 292px;
+
+  background: linear-gradient(
+    180deg,
+    #f7bf58 -44.58%,
+    rgba(243, 119, 131, 0) 151.31%
+  );
+  border-radius: 50%;
+}
+
+.circle3 {
+  position: absolute;
+  width: 409px;
+  height: 409px;
+  left: 1197px;
+  top: 507px;
+  border-radius: 50%;
+  background: linear-gradient(
+    180deg,
+    #f7bf58 -31.11%,
+    rgba(243, 119, 131, 0) 104.48%
+  );
+}
+
+.circle4 {
+  position: absolute;
+  width: 368px;
+  height: 368px;
+  left: 1022px;
+  top: 400px;
+  border-radius: 50%;
+  background: linear-gradient(
+    180deg,
+    #f7bf58 -31.11%,
+    rgba(243, 119, 131, 0) 104.48%
+  );
+}
+@media (max-width: 900px) {
+  .signInBody {
+    width: 80%;
+  }
+  .registerBody {
+    width: 90%;
+  }
+  .createPartyContainer {
+    width: 90%;
+  }
 }

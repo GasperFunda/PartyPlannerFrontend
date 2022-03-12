@@ -5,6 +5,8 @@ import Register from "./pages/register/Register";
 import BaseLayout from "./common/layout/BaseLayout";
 import Landing from "./pages/landing/Landing";
 import PartyDetails from "./pages/partyDetails/PartyDetails";
+import Home from "./pages/home/Home";
+import CreateParty from "./pages/createParty/CreateParty";
 
 function App() {
   return (
@@ -27,10 +29,18 @@ function App() {
           }
         />
         <Route
-          path="/partyDetails"
+          path="/party-details"
           element={
             <BaseLayout>
               <PartyDetails />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path="/create-party"
+          element={
+            <BaseLayout>
+              <CreateParty />
             </BaseLayout>
           }
         />
@@ -39,6 +49,14 @@ function App() {
           element={
             <BaseLayout>
               <Landing />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path="/home"
+          element={
+            <BaseLayout>
+              <Home />
             </BaseLayout>
           }
         />
