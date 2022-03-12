@@ -2,12 +2,27 @@ import { Button, Space, Card, Tabs } from "antd";
 import Text from "antd/lib/typography/Text";
 import testImage from "./testImage.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faCalendarDays, faNoteSticky } from '@fortawesome/free-solid-svg-icons'
-import * as React from "react";
+import { faLocationDot, faCalendarDays, faNoteSticky } from '@fortawesome/free-solid-svg-icons';
+import Wishlist from './components/Wishlist';
+import Comments from "./components/Comments";
+import Invitees from "./components/Invitees";
+import ShoppingList from "./components/ShoppingList";
 
 const { TabPane } = Tabs;
 
+function getShoppingList(loggedIn: boolean) {
+  if(loggedIn){
+    return (
+      <TabPane tab="Shopping list" key="4">
+        <ShoppingList/>
+      </TabPane>
+    );
+  }
+}
+
 export default function PartyDetails() {
+  var isPartyHost = true;
+
   return (
     <div className="partyDetailsBody">
       <img src={testImage} className="partyDetailsImage" />
@@ -28,9 +43,9 @@ export default function PartyDetails() {
         </div>
         <div className="partyDetailsAttendanceInfo">
           <Space>
-            <Card className="attendanceCard attendanceCardGoing" title={<span className="attendanceCardTitle">GOING</span>}>Card content</Card>
-            <Card className="attendanceCard attendanceCardMaybe" title={<span className="attendanceCardTitle">MAYBE</span>}>Card content</Card>
-            <Card className="attendanceCard attendanceCardCantGo" title={<span className="attendanceCardTitle">CAN'T GO</span>}>Card content</Card>
+            <Card className="attendanceCard attendanceCardGoing" title={<span className="attendanceCardTitle">GOING</span>}>0</Card>
+            <Card className="attendanceCard attendanceCardMaybe" title={<span className="attendanceCardTitle">MAYBE</span>}>0</Card>
+            <Card className="attendanceCard attendanceCardCantGo" title={<span className="attendanceCardTitle">CAN'T GO</span>}>0</Card>
           </Space>
           <Space>
             <Button
@@ -58,11 +73,15 @@ export default function PartyDetails() {
         </div>
         <Tabs className="partyDetailsInfoFromUsers" defaultActiveKey="1">
           <TabPane tab="Wishlist" key="1">
-            Your wishes here
+            <Wishlist/>
           </TabPane>
           <TabPane tab="Comments" key="2">
-            Comments here
+            <Comments/>
           </TabPane>
+          <TabPane tab="Invited" key="3">
+            <Invitees/>
+          </TabPane>
+          {getShoppingList(isPartyHost)}
         </Tabs>
       </Card>
     </div>

@@ -11,11 +11,11 @@ export interface IFormProps {
 const weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-export default function Form(props: IFormProps) {
+export default function Card(props: IFormProps) {
   var date = props.date.getDate() + ". " + monthNames[props.date.getMonth()];
 
   return (
-    <Link to={"/party/" + props.id}>
+    <Link to={"/party-details/" + props.id}>
         <div className="partyCard">
             <div className="partyCardDate">
               <span className="dateText">
