@@ -4,6 +4,7 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import BaseLayout from "./common/layout/BaseLayout";
 import Landing from "./pages/landing/Landing";
+import PartyDetails from "./pages/partyDetails/PartyDetails";
 
 function App() {
   return (
@@ -22,6 +23,14 @@ function App() {
           element={
             <BaseLayout>
               <Register />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path="/partyDetails"
+          element={
+            <BaseLayout>
+              <PartyDetails />
             </BaseLayout>
           }
         />
