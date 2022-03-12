@@ -8,6 +8,7 @@ import Comments from "./components/Comments";
 import Invitees from "./components/Invitees";
 import ShoppingList from "./components/ShoppingList";
 import { User } from "../../types/user";
+import { Comment } from "../../types/comment";
 import "./PartyDetails.css";
 import { stat } from "fs";
 
@@ -49,10 +50,12 @@ export default function PartyDetails(this: any) {
   // 0: not selected yet, 1: going, 2: maybe, 3: cantGo
   var attendanceStatus = 0;
   var invitees = [];
+  var comments : Comment[] = [];
 
   var status = 0;
   for (let i = 0; i < 10; i++) {
     invitees.push(new User(i, "Jože", "Test" + i, "joze.test@gmail.com", status, "profilepicsample.png"));
+    comments.push(new Comment(i, new User(i, "Jože", "Test" + i, "joze.test@gmail.com", status, "profilepicsample.png"), "comment no. " + i));
     status++;
     if(status === 4) status = 0;
   }
@@ -115,7 +118,7 @@ export default function PartyDetails(this: any) {
             <Wishlist />
           </TabPane>
           <TabPane tab="Comments" key="2">
-            <Comments />
+            <Comments comments={comments}/>
           </TabPane>
           <TabPane tab="Invited" key="3">
             <Invitees invitees={invitees}/>
