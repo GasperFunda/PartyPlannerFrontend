@@ -10,6 +10,7 @@ import ShoppingList from "./components/ShoppingList";
 import { User } from "../../types/user";
 import "./PartyDetails.css";
 import { useParams } from "react-router-dom";
+import { WishlistItem } from "../../types/wishlistItem";
 
 const { TabPane } = Tabs;
 
@@ -57,6 +58,11 @@ export default function PartyDetails(this: any) {
     invitees.push(new User(i, "Jože", "Test" + i, "joze.test@gmail.com", status, "profilepicsample.png"));
     status++;
     if(status === 4) status = 0;
+  }
+
+  var wishlistItems = [];
+  for (let i = 0; i < 10; i++) {
+    wishlistItems.push(new WishlistItem(i, "VODKA", "icon-name"));
   }
 
   return (
@@ -114,7 +120,7 @@ export default function PartyDetails(this: any) {
         </div>
         <Tabs className="partyDetailsInfoFromUsers" defaultActiveKey="1">
           <TabPane tab="Wishlist" key="1">
-            <Wishlist />
+            <Wishlist wishlistItems={wishlistItems}/>
           </TabPane>
           <TabPane tab="Comments" key="2">
             <Comments />

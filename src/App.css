@@ -39,6 +39,17 @@
   text-align: center;
 }
 
+.buttonSmall {
+  padding: 0px 15px;
+  height: 22px;
+  border-radius: 20px !important;
+  font-weight: 500;
+  background-color: #5cdb95 !important;
+  border: none !important;
+  line-height: 0px;
+  text-align: center;
+}
+
 #editProfileButton {
   background: linear-gradient(
     180deg,
@@ -112,42 +123,42 @@
 .attendanceButtonGoing {
   background-color: transparent !important;
   border: solid !important;
-  border-color: #62c489;
-  color: #62c489;
+  border-color: #5cdb95;
+  color: #5cdb95;
 }
 
 .attendanceButtonGoing:hover, .attendanceButtonGoingPressed {
-  background-color: #62c489 !important;
+  background-color: #5cdb95 !important;
   border: solid !important;
-  border-color: #62c489 !important;
+  border-color: #5cdb95 !important;
   color: white;
 }
 
 .attendanceButtonMaybe {
   background-color: transparent !important;
   border: solid !important;
-  border-color: #d4b70e;
-  color: #d4b70e;
+  border-color: #F7BF58;
+  color: #F7BF58;
 }
 
 .attendanceButtonMaybe:hover, .attendanceButtonMaybePressed {
-  background-color: #d4b70e !important;
+  background-color: #F7BF58 !important;
   border: solid !important;
-  border-color: #d4b70e !important;
+  border-color: #F7BF58 !important;
   color: white;
 }
 
 .attendanceButtonCantGo {
   background-color: transparent !important;
   border: solid !important;
-  border-color: #d8506d;
-  color: #d8506d;
+  border-color: #F37783;
+  color: #F37783;
 }
 
 .attendanceButtonCantGo:hover, .attendanceButtonCantGoPressed {
-  background-color: #d8506d !important;
+  background-color: #F37783 !important;
   border: solid !important;
-  border-color: #d8506d !important;
+  border-color: #F37783 !important;
   color: white;
 }
 
@@ -171,18 +182,18 @@
 }
 
 .attendanceCardGoing {
-  background-color: #62c489;
-  border-color: #62c489;
+  background-color: #5cdb95;
+  border-color: #5cdb95;
 }
 
 .attendanceCardMaybe {
-  background-color: #d4b70e;
-  border-color: #d4b70e;
+  background-color: #F7BF58;
+  border-color: #F7BF58;
 }
 
 .attendanceCardCantGo {
-  background-color: #d8506d;
-  border-color: #d8506d;
+  background-color: #F37783;
+  border-color: #F37783;
 }
 
 .ant-checkbox-inner::after {
