@@ -1,13 +1,16 @@
 import { UserAddOutlined } from "@ant-design/icons";
 import { Button, Col, Form as AntdForm, Input, Row } from "antd";
+import { UserRegister } from "../../types/user";
 
 const { Item } = AntdForm;
 
-export interface IFormProps {}
+export interface IFormProps {
+  onFinish(user: UserRegister): void;
+}
 
-export default function Form(props: IFormProps) {
+export default function Form({ onFinish }: IFormProps) {
   return (
-    <AntdForm className="form" name="register">
+    <AntdForm className="form" name="register" onFinish={onFinish}>
       <Item wrapperCol={{ offset: 11 }}>
         <UserAddOutlined style={{ fontSize: "80px", color: "white" }} />
       </Item>
@@ -15,7 +18,7 @@ export default function Form(props: IFormProps) {
         <Col span={12}>
           <Item
             label="First name"
-            name="firstName"
+            name="name"
             className="formItem"
             labelCol={{ span: 24 }}
             rules={[
@@ -28,7 +31,7 @@ export default function Form(props: IFormProps) {
         <Col span={12}>
           <Item
             label="Last name"
-            name="lastName"
+            name="surname"
             className="formItem"
             labelCol={{ span: 24 }}
             rules={[{ required: true, message: "Please input your last name" }]}

@@ -15,3 +15,16 @@ export class User {
         this.picture = picture;
     }
 }  
+export interface UserRegister {
+  name: string;
+  surname: string;
+  email: string;
+  username: string;
+  password: string;
+  repeatPassword?: string;
+}
+
+export interface UserLogin {
+  username: string;
+  password: string;
+}

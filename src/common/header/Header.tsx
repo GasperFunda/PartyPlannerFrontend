@@ -5,7 +5,7 @@ export function Header(): ReactElement {
   return (
     <nav className="menuBar">
       <div className="logo">
-        <a href="/">
+        <a href="/home">
           <p className="logoText">Party Planner</p>
         </a>
       </div>
