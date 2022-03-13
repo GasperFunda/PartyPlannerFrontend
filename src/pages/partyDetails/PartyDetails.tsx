@@ -135,7 +135,7 @@ export default function PartyDetails(this: any) {
           </TabPane>
           {(isUserHost) ? 
             <TabPane tab="Shopping list" key="4">
-              <ShoppingList />
+              <ShoppingList wishlistItems={wishlistItems} />
             </TabPane>
           : <></>}
         </Tabs>

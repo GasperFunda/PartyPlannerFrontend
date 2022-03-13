@@ -196,12 +196,12 @@
   border-color: #F37783;
 }
 
-.ant-checkbox-inner::after {
+.partyPrivateCheckbox .ant-checkbox-inner::after {
   width: 13.714286px;
   height: 23.142857px;
 }
 
-.ant-checkbox .ant-checkbox-inner {
+.partyPrivateCheckbox .ant-checkbox .ant-checkbox-inner {
   margin-top: 10px;
   width: 35px;
   height: 35px;

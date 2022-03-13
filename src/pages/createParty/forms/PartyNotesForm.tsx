@@ -45,7 +45,7 @@ export function PartyNotesForm({
           colon={false}
           valuePropName="checked"
         >
-          <Checkbox />
+          <Checkbox className="partyPrivateCheckbox"/>
         </Item>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Item>

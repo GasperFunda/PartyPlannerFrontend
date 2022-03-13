@@ -2,7 +2,8 @@
     height: 30px;
 }
 
-.userName, .wishlistItemDescription, .inviteeStatus {
+.userName, .wishlistItemDescription, .inviteeStatus, .shoppinglistItemQuantity {
+    vertical-align: middle;
     font-weight: bold;
 }
 
@@ -131,4 +132,27 @@
 
 .redBackground {
     background-color: #F37783 !important;
+}
+
+.shoppinglistItemQuantity {
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.shoppinglistItemQuantity>svg {
+    vertical-align: middle;
+}
+
+.shoppinglistItemQuantity>span {
+    display: inline-block;
+    text-align: right;
+    width: 20px;
+    margin-right: 5px;
+}
+
+.boughtCheckbox {
+    margin-top: 10px;
+    margin-right: 10px;
+    float: right;
 }
