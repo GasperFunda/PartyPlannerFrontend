@@ -10,15 +10,17 @@ export function Header(): ReactElement {
         </a>
       </div>
 
-      <UserOutlined
-        onClick={() => (window.location.href = "/profile")}
-        style={{
-          marginLeft: "auto",
-          color: "white",
-          fontSize: "46px",
-          marginRight: "30px",
-        }}
-      />
+      {localStorage.getItem("userID") && (
+        <UserOutlined
+          onClick={() => (window.location.href = "/profile")}
+          style={{
+            marginLeft: "auto",
+            color: "white",
+            fontSize: "46px",
+            marginRight: "30px",
+          }}
+        />
+      )}
     </nav>
   );
 }

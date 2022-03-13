@@ -1,6 +1,7 @@
 import { Form as AntdForm, Button, Input } from "antd";
 import { useForm } from "antd/lib/form/Form";
-import { useCallback, useState } from "react";
+import axios from "axios";
+import { useCallback, useEffect, useState } from "react";
 import { InvitationsTableData } from "../../../types/invitations";
 import { InvitationTable } from "../InvitationTable";
 
@@ -18,6 +19,12 @@ export default function PartyInviteForm({
 }: IPartyInviteFormProps) {
   const [invitations, setInvitations] = useState([] as InvitationsTableData[]);
   const [form] = useForm();
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/users`)
+      .then((res) => setInvitations(res.data));
+  }, []);
 
   const addInvite = useCallback(
     (data: InvitationsTableData) => {

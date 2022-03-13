@@ -5,15 +5,21 @@ const { Item } = AntdForm;
 export interface IAddCommentProps {
   onFinish(comment: any): void;
   hidden: boolean;
+  form: FormInstance;
 }
 
-export default function AddComment({ onFinish, hidden }: IAddCommentProps) {
+export default function AddComment({
+  onFinish,
+  hidden,
+  form,
+}: IAddCommentProps) {
   return (
     <AntdForm
       name="comments"
       className="form"
       hidden={hidden}
       onFinish={onFinish}
+      form={form}
     >
       <Item
         name="content"
@@ -31,7 +37,7 @@ export default function AddComment({ onFinish, hidden }: IAddCommentProps) {
           className="button"
           type="primary"
           htmlType="submit"
-          style={{ left: "35%", marginTop: "25px" }}
+          style={{ marginTop: "35px", left: "35%" }}
         >
           Submit
         </Button>
