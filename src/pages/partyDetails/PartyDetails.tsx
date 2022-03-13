@@ -1,12 +1,5 @@
 import { Button, Space, Card, Tabs } from "antd";
 import Text from "antd/lib/typography/Text";
-import testImage from "./testImage.jpg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faLocationDot,
-  faCalendarDays,
-  faNoteSticky,
-} from "@fortawesome/free-solid-svg-icons";
 import Wishlist from "./components/Wishlist";
 import Comments from "./components/Comments";
 import Invitees from "./components/Invitees";
@@ -14,7 +7,7 @@ import ShoppingList from "./components/ShoppingList";
 import { User } from "../../types/user";
 import { Comment } from "../../types/comment";
 import "./PartyDetails.css";
-import { stat } from "fs";
+import { WishlistItem } from "../../types/wishlistItem";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { PartyResponse } from "../../types/party";
@@ -119,29 +112,34 @@ export default function PartyDetails(this: any) {
     if (status === 4) status = 0;
   }
 
+  var wishlistItems = [];
+  for (let i = 0; i < 10; i++) {
+    wishlistItems.push(new WishlistItem(i, "VODKA", "drinkpicsample.png", i+1));
+  }
+
   return (
     <div className="partyDetailsBody">
-      <img src={testImage} className="partyDetailsImage" />
+      <img src="../partypicsample.png" className="partyDetailsImage" />
       <Card
         className="partyDetailsInfoContainer"
         title={
           <span className="partyDetailsPartyTitle">{party.partyName}</span>
         }
       >
-        <div className="partyDetailsImportantInfo">
+        <Space className="partyDetailsImportantInfo" size="middle">
           <Space>
-            <FontAwesomeIcon icon={faLocationDot} fontSize="25px" />
+            <img className="icon" src="../locationpicsample.png" />
             <Text className="partyDetailsInfoText">{party.location}</Text>
           </Space>
           <Space>
-            <FontAwesomeIcon icon={faCalendarDays} fontSize="21px" />
+            <img className="icon" src="../datepicsample.png" />
             <Text className="partyDetailsInfoText">{party.dateTime}</Text>
           </Space>
           <Space>
-            <FontAwesomeIcon icon={faNoteSticky} fontSize="21px" />
+            <img className="icon" src="../notespicsample.png" />
             <Text className="partyDetailsInfoText">{party.description}</Text>
           </Space>
-        </div>
+        </Space>
         <div className="partyDetailsAttendanceInfo">
           <Space>
             <Card
@@ -235,18 +233,18 @@ export default function PartyDetails(this: any) {
           <p>Number of likes on this party: {likes}</p>
         </div>
         <Tabs className="partyDetailsInfoFromUsers" defaultActiveKey="1">
-          <TabPane tab="Wishlist" key="1">
-            <Wishlist />
-          </TabPane>
-          <TabPane tab="Comments" key="2">
+          <TabPane tab="Comments" key="1">
             <Comments comments={comments} />
           </TabPane>
-          <TabPane tab="Invited" key="3">
-            <Invitees invitees={invitees} />
+          <TabPane tab="Invitees" key="2">
+            <Invitees invitees={invitees} isUserHost={isPartyHost}/>
+          </TabPane>
+          <TabPane tab="Wishlist" key="3">
+            <Wishlist wishlistItems={wishlistItems}/>
           </TabPane>
           {isPartyHost ? (
             <TabPane tab="Shopping list" key="4">
-              <ShoppingList />
+              <ShoppingList wishlistItems={wishlistItems} />
             </TabPane>
           ) : (
             <></>
