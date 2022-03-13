@@ -15,6 +15,7 @@ export default function Comments(props: IFormProps) {
       >
         ADD COMMENT
       </Button>
+      
       <div className="tabContent">
         {props.comments.map((comment) => {
           return (
