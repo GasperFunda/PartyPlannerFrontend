@@ -1,173 +1,177 @@
 .icon {
-    height: 30px;
+  height: 30px;
 }
 
-.userName, .wishlistItemDescription, .inviteeStatus, .shoppinglistItemQuantity {
-    vertical-align: middle;
-    font-weight: bold;
+.userName,
+.wishlistItemDescription,
+.inviteeStatus,
+.shoppinglistItemQuantity {
+  vertical-align: middle;
+  font-weight: bold;
 }
 
 .tabContent {
-    padding: 25px;
+  padding: 25px;
 }
 
-.commentInnerContainer, .inviteeInnerContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.commentInnerContainer,
+.inviteeInnerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .comment {
-    word-break: break-all;
+  word-break: break-all;
 }
 
 .listItem:first-child {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .listItem {
-    padding: 5px;
-    margin-top: 25px;
-    border-radius: 20px;
-    border: 1px solid #f4f4f4;
-    display: flex;
-    box-shadow: rgba(0, 0, 0, 0.23) 0px 3px 7px;
+  padding: 5px;
+  margin-top: 25px;
+  border-radius: 20px;
+  border: 1px solid #f4f4f4;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.23) 0px 3px 7px;
 }
 
 .picture {
-    height: 40px;
-    padding-right: 15px;
+  height: 40px;
+  padding-right: 15px;
 }
 
 .centeredButton {
-    left: 50%;
-    transform: translate(-50%);
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .attendanceCantGo {
-    color: #F37783;
+  color: #f37783;
 }
 
 .attendanceMaybe {
-    color: #F7BF58;
+  color: #f7bf58;
 }
 
 .attendanceGoing {
-    color: #5cdb95;
+  color: #5cdb95;
 }
 
 .attendanceNotSelected {
-    color: #AFAFAF;
+  color: #afafaf;
 }
 
 .attendanceContainerCantGo {
-    border-width: 1px 7px 1px 1px !important;
-    border-top-color: #FFFFFF !important;
-    border-right-color: #F37783 !important;
-    border-bottom-color: #FFFFFF !important;
-    border-left: #FFFFFF !important;
+  border-width: 1px 7px 1px 1px !important;
+  border-top-color: #ffffff !important;
+  border-right-color: #f37783 !important;
+  border-bottom-color: #ffffff !important;
+  border-left: #ffffff !important;
 }
 
 .attendanceContainerMaybe {
-    border-width: 1px 7px 1px 1px !important;
-    border-top-color: #FFFFFF !important;
-    border-right-color: #F7BF58 !important;
-    border-bottom-color: #FFFFFF !important;
-    border-left: #FFFFFF !important;
+  border-width: 1px 7px 1px 1px !important;
+  border-top-color: #ffffff !important;
+  border-right-color: #f7bf58 !important;
+  border-bottom-color: #ffffff !important;
+  border-left: #ffffff !important;
 }
 
 .attendanceContainerGoing {
-    border-width: 1px 7px 1px 1px !important;
-    border-top-color: #FFFFFF !important;
-    border-right-color: #5cdb95 !important;
-    border-bottom-color: #FFFFFF !important;
-    border-left: #FFFFFF !important;
+  border-width: 1px 7px 1px 1px !important;
+  border-top-color: #ffffff !important;
+  border-right-color: #5cdb95 !important;
+  border-bottom-color: #ffffff !important;
+  border-left: #ffffff !important;
 }
 
 .attendanceContainerNotSelected {
-    border-width: 1px 7px 1px 1px !important;
-    border-top-color: #FFFFFF !important;
-    border-right-color: #AFAFAF !important;
-    border-bottom-color: #FFFFFF !important;
-    border-left: #FFFFFF !important;
+  border-width: 1px 7px 1px 1px !important;
+  border-top-color: #ffffff !important;
+  border-right-color: #afafaf !important;
+  border-bottom-color: #ffffff !important;
+  border-left: #ffffff !important;
 }
 
 .wishlistDescription {
-    position: absolute;
-    left: 60px;
-    top: 50%;
-    transform: translate(0, -50%);
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
 .wishlistListItem {
-    padding: 7px;
-    margin-top: 25px;
-    border-radius: 20px;
-    border: 1px solid #f4f4f4;
-    box-shadow: rgba(0, 0, 0, 0.23) 0px 3px 7px;
+  padding: 7px;
+  margin-top: 25px;
+  border-radius: 20px;
+  border: 1px solid #f4f4f4;
+  box-shadow: rgba(0, 0, 0, 0.23) 0px 3px 7px;
 }
 
 .wishlistListItem:first-child {
-    margin-top: 0px;
+  margin-top: 0px;
 }
 
 .buttonWishlistAgreement {
-    margin-top: -7px;
-    margin-right: -8px;
-    border-radius: 0px 20px 20px 0px;
-    float: right;
-    height: 55px;
-    background-color: #5cdb95;
-    border: none;
+  margin-top: -7px;
+  margin-right: -8px;
+  border-radius: 0px 20px 20px 0px;
+  float: right;
+  height: 55px;
+  background-color: #5cdb95;
+  border: none;
 }
 
 .buttonWishlistAgreement:hover {
-    background-color: #47b97a;
+  background-color: #47b97a;
 }
 
 .buttonWishlistAgreement:focus {
-    background-color: #5cdb95;
+  background-color: #5cdb95;
 }
 
 .shoppinglistItemQuantity {
-    vertical-align: middle;
-    display: inline-block;
-    margin-right: 10px;
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 10px;
 }
 
-.shoppinglistItemQuantity>svg {
-    vertical-align: middle;
+.shoppinglistItemQuantity > svg {
+  vertical-align: middle;
 }
 
-.shoppinglistItemQuantity>span {
-    display: inline-block;
-    text-align: right;
-    width: 20px;
-    margin-right: 5px;
+.shoppinglistItemQuantity > span {
+  display: inline-block;
+  text-align: right;
+  width: 20px;
+  margin-right: 5px;
 }
 
 .boughtCheckbox {
-    margin-top: 10px;
-    margin-right: 10px;
-    float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  float: right;
 }
 
 .modalCancelButton {
-    width: 50%;
-    display: inline-block;
+  width: 50%;
+  display: inline-block;
 }
 
-.modalCancelButton>button {
-    float: right;
-    margin-right: 5px;
+.modalCancelButton > button {
+  float: right;
+  margin-right: 5px;
 }
 
 .modalInviteButton {
-    width: 50%;
-    display: inline-block;
+  width: 50%;
+  display: inline-block;
 }
 
-.modalInviteButton>button {
-    float: left;
-    margin-left: 5px;
+.modalInviteButton > button {
+  float: left;
+  margin-left: 5px;
 }

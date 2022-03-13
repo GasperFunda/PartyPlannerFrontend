@@ -68,6 +68,7 @@ export default function PartyDetails(this: any) {
   const [likes, setLikes] = useState(0);
   const [userLikedParty, setUserLikedParty] = useState(false);
   const [party, setParty] = useState({} as PartyResponse);
+
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_API_URL}/parties/${id}`).then((res) => {
       setParty(res.data);
@@ -80,7 +81,6 @@ export default function PartyDetails(this: any) {
   // 0: not selected yet, 1: going, 2: maybe, 3: cantGo
   var attendanceStatus = 0;
   var invitees = [];
-  var comments: Comment[] = [];
 
   var status = 0;
   for (let i = 0; i < 10; i++) {
@@ -94,27 +94,15 @@ export default function PartyDetails(this: any) {
         "profilepicsample.png"
       )
     );
-    comments.push(
-      new Comment(
-        i,
-        new User(
-          i,
-          "Jože",
-          "Test" + i,
-          "joze.test@gmail.com",
-          status,
-          "profilepicsample.png"
-        ),
-        "comment no. " + i
-      )
-    );
     status++;
     if (status === 4) status = 0;
   }
 
   var wishlistItems = [];
   for (let i = 0; i < 10; i++) {
-    wishlistItems.push(new WishlistItem(i, "VODKA", "drinkpicsample.png", i+1));
+    wishlistItems.push(
+      new WishlistItem(i, "VODKA", "drinkpicsample.png", i + 1)
+    );
   }
 
   return (
@@ -234,13 +222,13 @@ export default function PartyDetails(this: any) {
         </div>
         <Tabs className="partyDetailsInfoFromUsers" defaultActiveKey="1">
           <TabPane tab="Comments" key="1">
-            <Comments comments={comments} />
+            <Comments />
           </TabPane>
           <TabPane tab="Invitees" key="2">
-            <Invitees invitees={invitees} isUserHost={isPartyHost}/>
+            <Invitees invitees={invitees} isUserHost={isPartyHost} />
           </TabPane>
           <TabPane tab="Wishlist" key="3">
-            <Wishlist wishlistItems={wishlistItems}/>
+            <Wishlist wishlistItems={wishlistItems} />
           </TabPane>
           {isPartyHost ? (
             <TabPane tab="Shopping list" key="4">
