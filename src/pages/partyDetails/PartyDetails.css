@@ -171,3 +171,7 @@
     float: left;
     margin-left: 5px;
 }
+
+.form {
+    display: flex;
+}
