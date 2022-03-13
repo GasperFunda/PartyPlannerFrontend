@@ -3,35 +3,41 @@ import { Row, Col, Button } from "antd";
 import Card from "./Card";
 import PartyFilters from "./PartyFilters";
 import "./Home.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { PartyResponse } from "../../types/party";
+import moment from "moment";
 
 export default function Home() {
-  var cols = [];
-
-  // TODO: get data form DB
-  for (var i = 0; i < 21; i++) {
-    cols.push(
-      <Col
-        key={i.toString()}
-        xs={{ span: 18 }}
-        sm={{ span: 14 }}
-        md={{ span: 10 }}
-        lg={{ span: 7 }}
-      >
-        <Card
-          id="Test"
-          name="LIGHT show!"
-          date={new Date()}
-          location="Tyrševa ulica 30, 3000 Maribor"
-          imageLink="https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-        />
-      </Col>
-    );
-  }
+  const [parties, setParties] = useState([] as PartyResponse[]);
+  useEffect(() => {
+    axios.get(`${process.env.REACT_APP_API_URL}/parties`).then((res) => {
+      setParties(res.data);
+    });
+  }, []);
 
   return (
     <div className="homeBody">
-      <PartyFilters/>
-      <Row justify="space-around">{cols}</Row>
+      <PartyFilters></PartyFilters>
+      <Row justify="space-around">
+        {parties.map((party) => (
+          <Col
+            key={party._id.toString()}
+            xs={{ span: 18 }}
+            sm={{ span: 14 }}
+            md={{ span: 10 }}
+            lg={{ span: 7 }}
+          >
+            <Card
+              id={party._id}
+              name={party.partyName}
+              date={moment(party.dateTime, "MMMM Do YYYY hh:mm").toDate()}
+              location={party.location}
+              imageLink="https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            />
+          </Col>
+        ))}
+      </Row>
       <Button
         type="primary"
         shape="circle"

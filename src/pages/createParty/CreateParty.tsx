@@ -1,6 +1,9 @@
 import { message } from "antd";
+import axios from "axios";
+import moment from "moment";
 import * as React from "react";
 import { useCallback, useState } from "react";
+import { CreatePartyRequest, PartyFormRequest } from "../../types/party";
 import PartyInviteForm from "./forms/PartyInviteForm";
 import PartyLocationForm from "./forms/PartyLocationForm";
 import PartyNameForm from "./forms/PartyNameForm";
@@ -35,11 +38,29 @@ export default function CreateParty(props: ICreatePartyProps) {
 
   const handleSubmit = useCallback(
     (invitations: any) => {
-      const finishedData = { ...data, ...invitations };
+      const finishedData: PartyFormRequest = { ...data, ...invitations };
       console.log(finishedData);
-
-      message.success("Your invitations have been sent out!");
-      // TODO: Call backend and go to home/party details page
+      const createPartyRequestBody: CreatePartyRequest = {
+        partyName: finishedData.title,
+        location: finishedData.location,
+        private: finishedData.private,
+        image: "/",
+        description: finishedData.description,
+        likes: 0,
+        fk_user_host: localStorage.getItem("userID"),
+        dateTime: `${moment(finishedData.date).format(
+          "MMMM Do YYYY"
+        )}, ${moment(finishedData.time).format("hh:mm")}`,
+      };
+      axios
+        .post(
+          `${process.env.REACT_APP_API_URL}/parties/create`,
+          createPartyRequestBody
+        )
+        .then((res) => {
+          message.success("Party successfully created!");
+          window.location.href = "/home";
+        });
     },
     [data]
   );
