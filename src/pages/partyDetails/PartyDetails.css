@@ -39,7 +39,7 @@
     padding-right: 15px;
 }
 
-.buttonInviteMore {
+.centeredButton {
     left: 50%;
     transform: translate(-50%);
     margin-bottom: 15px;
@@ -128,10 +128,6 @@
 
 .buttonWishlistAgreement:focus {
     background-color: #5cdb95;
-}
-
-.redBackground {
-    background-color: #F37783 !important;
 }
 
 .shoppinglistItemQuantity {

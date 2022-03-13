@@ -1,7 +1,5 @@
 import { Button } from "antd";
 import { WishlistItem } from "../../../types/wishlistItem";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMartiniGlassCitrus } from '@fortawesome/free-solid-svg-icons';
 
 export interface IFormProps {
     wishlistItems: WishlistItem[]
@@ -27,7 +25,7 @@ export default function Wishlist(props: IFormProps) {
         <>
             <Button
                 type="primary"
-                className="button buttonInviteMore"
+                className="button centeredButton"
                 size="middle"
             >
                 ADD TO WISH LIST
