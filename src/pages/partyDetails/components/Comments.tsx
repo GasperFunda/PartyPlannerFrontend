@@ -15,12 +15,14 @@ export default function Comments() {
   const [isAddCommentVisible, setIsAddCommentVisible] = useState(false);
   const { id } = useParams();
   const [comments, setComments] = useState([] as CommentResponse[]);
+
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_API_URL}/comments/${id}`).then((res) => {
       console.log("DATA", res.data);
       setComments(res.data);
     });
   }, []);
+
   const handleAddComment = useCallback((comment) => {
     console.log(comment);
     const commentRequest: CommentRequest = {
@@ -51,6 +53,7 @@ export default function Comments() {
           });
       });
   }, []);
+
   return (
     <>
       <Button
@@ -62,6 +65,7 @@ export default function Comments() {
       >
         ADD COMMENT
       </Button>
+      
       <div className="tabContent">
         <AddComment onFinish={handleAddComment} hidden={!isAddCommentVisible} />
         {comments.map((comment) => {

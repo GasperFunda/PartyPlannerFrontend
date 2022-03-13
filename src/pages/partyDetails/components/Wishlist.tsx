@@ -1,5 +1,6 @@
 import { Button } from "antd";
 import { WishlistItem } from "../../../types/wishlistItem";
+import AddWishlistForm from "./AddWishlistForm";
 
 export interface IFormProps {
     wishlistItems: WishlistItem[]
@@ -23,14 +24,8 @@ function meToo(e: any) {
 export default function Wishlist(props: IFormProps) {
     return (
         <>
-            <Button
-                type="primary"
-                className="button centeredButton"
-                size="middle"
-            >
-                ADD TO WISH LIST
-            </Button>
             <div className="tabContent">
+                <AddWishlistForm></AddWishlistForm>
                 {props.wishlistItems.map((wishlistItem) => {
                     return (
                         <div className="wishlistListItem" key={wishlistItem.id}>

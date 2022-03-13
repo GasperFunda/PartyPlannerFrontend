@@ -171,7 +171,11 @@
   display: inline-block;
 }
 
-.modalInviteButton > button {
-  float: left;
-  margin-left: 5px;
+.modalInviteButton>button {
+    float: left;
+    margin-left: 5px;
+}
+
+.form {
+    display: flex;
 }
