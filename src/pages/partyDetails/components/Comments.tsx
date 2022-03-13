@@ -1,5 +1,5 @@
 import { DownOutlined, UpOutlined } from "@ant-design/icons";
-import { Button, message } from "antd";
+import { Button, FormInstance, message, Form as AntdForm } from "antd";
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -14,11 +14,11 @@ import AddComment from "./AddComment";
 export default function Comments() {
   const [isAddCommentVisible, setIsAddCommentVisible] = useState(false);
   const { id } = useParams();
+  const [form] = AntdForm.useForm();
   const [comments, setComments] = useState([] as CommentResponse[]);
 
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_API_URL}/comments/${id}`).then((res) => {
-      console.log("DATA", res.data);
       setComments(res.data);
     });
   }, []);
@@ -50,6 +50,9 @@ export default function Comments() {
               fk_user: user,
             };
             setComments(comments.concat(newComment));
+            form.resetFields();
+            setIsAddCommentVisible(false);
+            message.success("Comment successfully posted!");
           });
       });
   }, []);
@@ -59,7 +62,7 @@ export default function Comments() {
       <Button
         type="primary"
         className="button buttonInviteMore"
-        style={{ paddingBottom: "30px" }}
+        style={{ paddingBottom: "30px", left: "28%" }}
         icon={!isAddCommentVisible ? <DownOutlined /> : <UpOutlined />}
         onClick={() => setIsAddCommentVisible(!isAddCommentVisible)}
       >
@@ -67,7 +70,11 @@ export default function Comments() {
       </Button>
       
       <div className="tabContent">
-        <AddComment onFinish={handleAddComment} hidden={!isAddCommentVisible} />
+        <AddComment
+          onFinish={handleAddComment}
+          hidden={!isAddCommentVisible}
+          form={form}
+        />
         {comments.map((comment) => {
           return (
             <div className="listItem" key={comment._id}>

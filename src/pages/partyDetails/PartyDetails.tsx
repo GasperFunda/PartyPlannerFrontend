@@ -1,4 +1,4 @@
-import { Button, Space, Card, Tabs } from "antd";
+import { Button, Space, Card, Tabs, Form as AntdForm } from "antd";
 import Text from "antd/lib/typography/Text";
 import Wishlist from "./components/Wishlist";
 import Comments from "./components/Comments";
@@ -66,6 +66,7 @@ export default function PartyDetails(this: any) {
   const [cantGoNum, setCantGoNum] = useState(0);
   const [userSelected, setUserSelected] = useState(0);
   const [likes, setLikes] = useState(0);
+
   const [userLikedParty, setUserLikedParty] = useState(false);
   const [party, setParty] = useState({} as PartyResponse);
 
