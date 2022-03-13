@@ -8,6 +8,7 @@ import PartyDetails from "./pages/partyDetails/PartyDetails";
 import Home from "./pages/home/Home";
 import CreateParty from "./pages/createParty/CreateParty";
 import Profile from "./pages/profile/Profile";
+import EditProfile from "./pages/editProfile/EditProfile";
 
 function App() {
   return (
@@ -50,6 +51,14 @@ function App() {
           element={
             <BaseLayout>
               <Home />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path="/edit-profile"
+          element={
+            <BaseLayout>
+              <EditProfile />
             </BaseLayout>
           }
         />

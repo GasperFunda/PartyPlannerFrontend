@@ -136,8 +136,9 @@
   color: #5cdb95;
 }
 
-.attendanceButtonGoing:hover, .attendanceButtonGoingPressed {
-  background-color: #5cdb95 !important;
+.attendanceButtonGoing:hover,
+.attendanceButtonGoingPressed {
+  background-color: #62c489 !important;
   border: solid !important;
   border-color: #5cdb95 !important;
   color: white;
@@ -146,28 +147,30 @@
 .attendanceButtonMaybe {
   background-color: transparent !important;
   border: solid !important;
-  border-color: #F7BF58;
-  color: #F7BF58;
+  border-color: #f7bf58;
+  color: #f7bf58;
 }
 
-.attendanceButtonMaybe:hover, .attendanceButtonMaybePressed {
-  background-color: #F7BF58 !important;
+.attendanceButtonMaybe:hover,
+.attendanceButtonMaybePressed {
+  background-color: #d4b70e !important;
   border: solid !important;
-  border-color: #F7BF58 !important;
+  border-color: #f7bf58 !important;
   color: white;
 }
 
 .attendanceButtonCantGo {
   background-color: transparent !important;
   border: solid !important;
-  border-color: #F37783;
-  color: #F37783;
+  border-color: #f37783;
+  color: #f37783;
 }
 
-.attendanceButtonCantGo:hover, .attendanceButtonCantGoPressed {
-  background-color: #F37783 !important;
+.attendanceButtonCantGo:hover,
+.attendanceButtonCantGoPressed {
+  background-color: #d8506d !important;
   border: solid !important;
-  border-color: #F37783 !important;
+  border-color: #f37783 !important;
   color: white;
 }
 
@@ -196,13 +199,13 @@
 }
 
 .attendanceCardMaybe {
-  background-color: #F7BF58;
-  border-color: #F7BF58;
+  background-color: #f7bf58;
+  border-color: #f7bf58;
 }
 
 .attendanceCardCantGo {
-  background-color: #F37783;
-  border-color: #F37783;
+  background-color: #f37783;
+  border-color: #f37783;
 }
 
 .partyPrivateCheckbox .ant-checkbox-inner::after {
@@ -237,7 +240,7 @@
   justify-content: center;
 }
 
-.form>* {
+.form > * {
   margin: 0 auto;
 }
 
@@ -278,6 +281,17 @@
   align-items: center;
 }
 
+.editProfileContainer {
+  background: white;
+  width: 60%;
+  padding: 50px;
+  height: 65vh;
+  border-radius: 30px;
+  margin: 45px auto;
+  justify-content: center;
+  flex-direction: row;
+}
+
 .circle1 {
   position: fixed;
   width: 575px;
@@ -302,6 +316,10 @@
       #f7bf58 -44.58%,
       rgba(243, 119, 131, 0) 151.31%);
   border-radius: 50%;
+}
+
+.colorfulDivider {
+  border: linear-gradient(90deg, #f47884 0%, #fad6a9 100%) !important;
 }
 
 .circle3 {
