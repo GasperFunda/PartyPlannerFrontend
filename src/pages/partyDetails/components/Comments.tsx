@@ -10,7 +10,7 @@ export default function Comments(props: IFormProps) {
     <>
       <Button
         type="primary"
-        className="button buttonInviteMore"
+        className="button centeredButton"
         size="middle"
       >
         ADD COMMENT
