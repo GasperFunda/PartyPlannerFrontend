@@ -37,6 +37,17 @@
   border: none !important;
   line-height: 0px;
   text-align: center;
+  color: white;
+}
+
+.button:hover {
+  color: white;
+  background-color: #47b97a !important;
+}
+
+.button:focus {
+  color: white;
+  background-color: #5cdb95 !important;
 }
 
 .buttonSmall {
@@ -343,5 +354,13 @@ hr {
 }
 
 .redBackground {
+  background-color: #F37783 !important;
+}
+
+.redBackground:hover {
+  background-color: #c96872 !important;
+}
+
+.redBackground:focus {
   background-color: #F37783 !important;
 }

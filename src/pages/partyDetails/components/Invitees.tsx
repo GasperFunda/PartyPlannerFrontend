@@ -4,6 +4,8 @@ import { User } from "../../../types/user";
 import { InvitationsTableData } from "../../../types/invitations";
 import { InvitationTable } from "../../createParty/InvitationTable"
 import { useForm } from "antd/lib/form/Form";
+import { CreatePartyRequest, PartyFormRequest } from "../../../types/party";
+import axios from "axios";
 
 const { Item } = AntdForm;
 
@@ -19,28 +21,26 @@ const attendanceTexts = ["YET TO DECIDE", "GOING", "MAYBE", "CAN'T GO"];
 export default function Invitees(props: IFormProps) {
     const [invitations, setInvitations] = useState([] as InvitationsTableData[]);
     const [form] = useForm();
-    const [data, setData] = useState({});
     const [isModalVisible, setIsModalVisible] = useState(false);
-    
+
     const addInvite = useCallback(
-      (data: InvitationsTableData) => {
-        setInvitations([...invitations, data]);
-        form.resetFields();
-      },
-      [invitations, form]
+        (data: InvitationsTableData) => {
+            setInvitations([...invitations, data]);
+            form.resetFields();
+        },
+        [invitations, form]
     );
 
     const showModal = () => {
         setIsModalVisible(true);
     };
 
-    const handleOk = () => {
-        //TODO: add item do DB
+    const handleSubmit = () => {
+        setInvitations([] as InvitationsTableData[]);
         setIsModalVisible(false);
     };
 
     const handleCancel = () => {
-        //TODO
         setIsModalVisible(false);
     };
 
@@ -48,28 +48,37 @@ export default function Invitees(props: IFormProps) {
         <>
             <Modal
                 className="inviteMoreModal"
-                title="Invite more people"
-                okButtonProps={{ className: "button" }}
-                okText="INVITE"
-                cancelButtonProps={{ className: "button redBackground", type: "primary" }}
-                cancelText="CANCEL"
                 centered={true}
                 visible={isModalVisible}
-                onOk={handleOk}
-                onCancel={handleCancel}>
+                footer={[<>
+                    <span className="modalCancelButton">
+                        <Button
+                            type="primary"
+                            className="button redBackground"
+                            onClick={handleCancel}>
+                            CANCEL
+                        </Button>
+                    </span>
+                    <span className="modalInviteButton">
+                        <Button
+                            type="primary"
+                            className="button"
+                            onClick={handleSubmit}>
+                            INVITE
+                        </Button>
+                    </span>
+                </>]}>
                 <div>
                     <div style={{ textAlign: "center" }}>
                         <h1 style={{ fontSize: "40px", textAlign: "center" }}>
-                            Let's invite some people!
+                            Let's invite more people!
                         </h1>
                     </div>
                     <InvitationTable data={invitations} />
                     <AntdForm
-                        layout="inline"
                         style={{ marginBottom: "35px" }}
                         onFinish={addInvite}
-                        form={form}
-                    >
+                        form={form}>
                         <Item
                             name="name"
                             label="Name"
@@ -78,8 +87,7 @@ export default function Invitees(props: IFormProps) {
                                     required: true,
                                     message: "Please enter the name of the guest.",
                                 },
-                            ]}
-                        >
+                            ]}>
                             <Input className="input" />
                         </Item>
                         <Item
@@ -90,12 +98,11 @@ export default function Invitees(props: IFormProps) {
                                     required: true,
                                     message: "Please enter the email of the guest.",
                                 },
-                            ]}
-                        >
+                            ]}>
                             <Input className="input" />
                         </Item>
                         <Item>
-                            <Button className="button" htmlType="submit">
+                            <Button className="button centeredButton" htmlType="submit">
                                 Add
                             </Button>
                         </Item>
@@ -107,8 +114,7 @@ export default function Invitees(props: IFormProps) {
                     type="primary"
                     className="button centeredButton"
                     size="middle"
-                    onClick={showModal}
-                >
+                    onClick={showModal}>
                     INVITE MORE
                 </Button>
                 : <></>}

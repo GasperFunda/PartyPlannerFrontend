@@ -42,7 +42,6 @@
 .centeredButton {
     left: 50%;
     transform: translate(-50%);
-    margin-bottom: 15px;
 }
 
 .attendanceCantGo {
@@ -151,4 +150,24 @@
     margin-top: 10px;
     margin-right: 10px;
     float: right;
+}
+
+.modalCancelButton {
+    width: 50%;
+    display: inline-block;
+}
+
+.modalCancelButton>button {
+    float: right;
+    margin-right: 5px;
+}
+
+.modalInviteButton {
+    width: 50%;
+    display: inline-block;
+}
+
+.modalInviteButton>button {
+    float: left;
+    margin-left: 5px;
 }
