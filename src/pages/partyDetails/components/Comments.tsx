@@ -47,8 +47,6 @@ export default function Comments() {
               fk_party: "1",
               fk_user: user,
             };
-            console.log(comments);
-
             setComments(comments.concat(newComment));
           });
       });
